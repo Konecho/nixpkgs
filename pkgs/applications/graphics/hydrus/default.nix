@@ -30,6 +30,8 @@ python3Packages.buildPythonPackage rec {
   buildInputs = [
     qtbase
     qtcharts
+  ] ++ lib.optionals stdenv.isLinux [
+    qtwayland
   ];
 
   propagatedBuildInputs = with python3Packages; [
